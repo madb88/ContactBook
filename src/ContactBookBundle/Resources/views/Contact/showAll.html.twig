@@ -9,7 +9,7 @@
     <table class="table-hover table-condensed">
     {% for contact in contacts %}
         <tr>
-            <td width="90%"><a href="{{ path('show', {"id": contact.id })}}"><strong>{{ contact.name }}</strong></a></td>
+            <td width="90%"><a href="{{ path('show', {"id": contact.id })}}"><strong>{{ contact.name }} {{ contact.surname }}</strong></a></td>
             <td><a class="btn btn-success" href="{{ path('update', {"id": contact.id })}}" role="button">Update</a></td>
             <td><a class="btn btn-danger" href="{{ path('delete', {"id": contact.id })}}" role="button">Delete</a></td>
         </tr>

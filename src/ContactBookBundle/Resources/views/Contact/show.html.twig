@@ -1,47 +1,61 @@
 {% extends "::base.html.twig" %}
 {% block title %}Contact {{ contact.name }}{% endblock %}
 {% block body %} 
-    <h2>{{ contact.name }} {{ contact.surname }}</h2>
-
-    <table class="table-hover table-condensed">
-        <tr>
-        <p><strong>Name:</strong> {{ contact.name }}</p>
-        <p><strong>Surname:</strong> {{ contact.surname }}</p>
-        <p><strong>Description:</strong> {{ contact.description }}</p>
-        <p><a class="btn btn-success btn-sm" href="{{ path('update', {"id": contact.id })}}" role="button">Update contact</a></td>
-            <a class="btn btn-info btn-sm" href="{{ path('showAll')}}" role="button">Home</a></p>
-        </tr>
-</table>
-<hr>
-<h2>Adresse's</h2>
-{% for address in contact.addresses %}
-    <p><strong>Miasto:</strong> {{ address.city }}</p>
-    <p><strong>Ulica:</strong> {{ address.street }}</p>
-    <p><strong>Nr domu:</strong> {{ address.houseNumber }}</p>
-    <p><strong>Nr mieszkania:</strong> {{ address.apartmentNumber }}</p>
-    <a class="btn btn-success btn-xs" href="{{ path('updateAddress', {"id": address.id })}}" role="button">Update address</a>
-    <a class="btn btn-danger btn-xs" href="{{ path('deleteAddress', {"id": address.id })}}" role="button">Delete address</a>
-
-
-{% endfor %}
-
-<hr>
-<h2>Email's</h2>
-{% for email in contact.emails %}
-    <p><strong>Email:</strong> {{ email.email }}</p>
-    <p><strong>Typ:</strong> {{ email.type }}</p>
-    <a class="btn btn-success btn-xs" href="{{ path('updateEmail', {"id": email.id })}}" role="button">Update email</a>
-    <a class="btn btn-danger btn-xs" href="{{ path('deleteEmail', {"id": email.id })}}" role="button">Delete email</a>
-
-{% endfor %}
-
-<hr>
-<h2>Phone's</h2>
-{% for phone in contact.phones %}
-    <p><strong>Numer:</strong> {{ phone.number }}</p>
-    <p><strong>Typ:</strong> {{ phone.type }}</p>
-    <a class="btn btn-success btn-xs" href="{{ path('updatePhone', {"id": phone.id })}}" role="button">Update phone</a>
-    <a class="btn btn-danger btn-xs" href="{{ path('deletePhone', {"id": phone.id })}}" role="button">Delete phone</a>
-{% endfor %}
+    <h1>{{ contact.name }} {{ contact.surname }}</h1>
+    <div class="well">
+        <table class="table-hover table-condensed">
+            <tr>
+            <p><strong>Name:</strong> {{ contact.name }}</p>
+            <p><strong>Surname:</strong> {{ contact.surname }}</p>
+            <p><strong>Description:</strong> {{ contact.description }}</p>
+            <p><a class="btn btn-success btn-sm" href="{{ path('update', {"id": contact.id })}}" role="button">Update contact</a></td>
+                <a class="btn btn-info btn-sm" href="{{ path('showAll')}}" role="button">Home</a></p>
+            </tr>
+        </table>
+    </div>
+    <hr>  
+    <h3>Adresse's</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {% for address in contact.addresses %}
+                <p><strong>Miasto:</strong> {{ address.city }}</p>
+                <p><strong>Ulica:</strong> {{ address.street }}</p>
+                <p><strong>Nr domu:</strong> {{ address.houseNumber }}</p>
+                <p><strong>Nr mieszkania:</strong> {{ address.apartmentNumber }}</p>
+                <a class="btn btn-success btn-xs" href="{{ path('updateAddress', {"id": address.id })}}" role="button">Update address</a>
+                <a class="btn btn-danger btn-xs" href="{{ path('deleteAddress', {"id": address.id })}}" role="button">Delete address</a>
+                {% else %}
+                    <p>You have to add address for this contact</p>
+            {% endfor %}
+        </div>
+    </div>
+    <hr>
+    <h3>Email's</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {% for email in contact.emails %}
+                <p><strong>Email:</strong> {{ email.email }}</p>
+                <p><strong>Typ:</strong> {{ email.type }}</p>
+                <a class="btn btn-success btn-xs" href="{{ path('updateEmail', {"id": email.id })}}" role="button">Update email</a>
+                <a class="btn btn-danger btn-xs" href="{{ path('deleteEmail', {"id": email.id })}}" role="button">Delete email</a>
+                {% else %}
+                    <p>You have to add email for this contact</p>
+            {% endfor %}
+        </div>
+    </div>
+    <hr>
+    <h3>Phone's</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {% for phone in contact.phones %}
+                <p><strong>Numer:</strong> {{ phone.number }}</p>
+                <p><strong>Typ:</strong> {{ phone.type }}</p>
+                <a class="btn btn-success btn-xs" href="{{ path('updatePhone', {"id": phone.id })}}" role="button">Update phone</a>
+                <a class="btn btn-danger btn-xs" href="{{ path('deletePhone', {"id": phone.id })}}" role="button">Delete phone</a>
+            {% else %}
+                    <p>You have to add phone for this contact</p>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
 
