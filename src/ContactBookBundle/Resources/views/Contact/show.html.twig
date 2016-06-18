@@ -1,0 +1,34 @@
+
+<p>Contact</p>
+<p>Name: {{ contact.name }}</p>   
+<p>Surname: {{ contact.surname }}</p>   
+<p>Description: {{ contact.description }}</p>   
+<a href="{{ path('update', {"id": contact.id })}}">Update Contact</a>
+
+<hr>
+{% for address in contact.addresses %}
+    <p>Miasto: {{ address.city }}</p>
+    <p>Ulica: {{ address.street }}</p>
+    <p>Nr domu: {{ address.houseNumber }}</p>
+    <p>Nr mieszkania: {{ address.apartmentNumber }}</p>
+    <a href="{{ path('updateAddress', {"id": address.id })}}">Update Address</a>
+    <a href="{{ path('deleteAddress', {"id": address.id })}}">Delete Address</a>
+
+{% endfor %}
+
+<hr>
+{% for email in contact.emails %}
+    <p>Email: {{ email.email }}</p>
+    <p>Typ: {{ email.type }}</p>
+    <a href="{{ path('updateEmail', {"id": email.id })}}">Update Email</a>
+    <a href="{{ path('deleteEmail', {"id": email.id })}}">Delete Email</a>
+{% endfor %}
+
+<hr>
+{% for phone in contact.phones %}
+    <p>Numer: {{ phone.number }}</p>
+    <p>Typ: {{ phone.type }}</p>
+    <a href="{{ path('updatePhone', {"id": phone.id })}}">Update Phone</a>
+    <a href="{{ path('deletePhone', {"id": phone.id })}}">Delete Phone</a>
+{% endfor %}
+
