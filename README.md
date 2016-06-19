@@ -5,13 +5,13 @@ You can create your own contact book.
 
 Website was created using:
 
--HTML
--CSS
--Bootstrap for front-end 
--OOP PHP
--Symfony2
--Doctrine 2 ORM, DQL
--Twig templates
+- HTML
+- CSS
+- Bootstrap for front-end 
+- OOP PHP
+- Symfony2
+- Doctrine 2 ORM, DQL
+- Twig templates
 
 Features:
 
