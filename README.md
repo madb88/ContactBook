@@ -15,8 +15,8 @@ Website was created using:
 
 Features:
 
-You can add and delete contact
-You can edit contacts and add them:
+1. You can add and delete contact
+2. You can edit contacts and add them:
 - Description
 - Address
 - Email address
