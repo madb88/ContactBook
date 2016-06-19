@@ -24,9 +24,9 @@ class ContactController extends Controller {
         $contact = new Contact();
         $form = $this->createFormBuilder($contact)
                 ->setAction($this->generateUrl('create'))
-                ->add('name', null, array('label' => 'Imie'))
-                ->add('surname', null, array('label' => "Nazwisko"))
-                ->add('description', null, array('label' => "Opis"))
+                ->add('name', null, array('label' => 'Name'))
+                ->add('surname', null, array('label' => "Surname"))
+                ->add('description', null, array('label' => "Description"))
                 ->add('submit', 'submit')
                 ->getForm();
         $form->handleRequest($request);
@@ -51,9 +51,9 @@ class ContactController extends Controller {
 
         $form = $this->createFormBuilder($contact)
                 ->setAction($this->generateUrl('create'))
-                ->add('name', null, array('label' => 'Imie'))
-                ->add('surname', null, array('label' => "Nazwisko"))
-                ->add('description', null, array('label' => "Opis"))
+                ->add('name', null, array('label' => 'Name'))
+                ->add('surname', null, array('label' => "Surname"))
+                ->add('description', null, array('label' => "Description"))
                 ->add('submit', 'submit')
                 ->getForm();
         return ['form' => $form->createView()];
@@ -93,9 +93,9 @@ class ContactController extends Controller {
         }
 
         $form = $this->createFormBuilder($contact)
-                ->add('name', null, array('label' => 'Imie'))
-                ->add('surname', null, array('label' => "Nazwisko"))
-                ->add('description', null, array('label' => "Opis"))
+                ->add('name', null, array('label' => 'Name'))
+                ->add('surname', null, array('label' => "Surname"))
+                ->add('description', null, array('label' => "Description"))
                 ->add('submit', 'submit')
                 ->getForm();
         $form->handleRequest($request);
@@ -136,10 +136,10 @@ class ContactController extends Controller {
         $address = new Address();
 
         $form = $this->createFormBuilder($address)
-                ->add('city', null, array('label' => 'Miasto'))
-                ->add('street', null, array('label' => "Ulica"))
-                ->add('house_number', null, array('label' => "Nr domu"))
-                ->add('apartment_number', null, array('label' => "Nr mieszkania"))
+                ->add('city', null, array('label' => 'City'))
+                ->add('street', null, array('label' => "Street"))
+                ->add('house_number', null, array('label' => "House number"))
+                ->add('apartment_number', null, array('label' => "Apartment number"))
                 ->add('submit', 'submit')
                 ->getForm();
         $form->handleRequest($request);
@@ -169,7 +169,7 @@ class ContactController extends Controller {
 
         $form = $this->createFormBuilder($email)
                 ->add('email', null, array('label' => 'Email'))
-                ->add('type', null, array('label' => "Typ"))
+                ->add('type', null, array('label' => "Type"))
                 ->add('submit', 'submit')
                 ->getForm();
         $form->handleRequest($request);
@@ -198,8 +198,8 @@ class ContactController extends Controller {
         $phone = new Phone();
 
         $form = $this->createFormBuilder($phone)
-                ->add('number', null, array('label' => 'Numer'))
-                ->add('type', null, array('label' => "Typ"))
+                ->add('number', null, array('label' => 'Phone number'))
+                ->add('type', null, array('label' => "Type"))
                 ->add('submit', 'submit')
                 ->getForm();
         $form->handleRequest($request);
@@ -230,10 +230,10 @@ class ContactController extends Controller {
         }
 
         $form = $this->createFormBuilder($address)
-                ->add('city', null, array('label' => 'Miasto'))
-                ->add('street', null, array('label' => "Ulica"))
-                ->add('house_number', null, array('label' => "Nr domu"))
-                ->add('apartment_number', null, array('label' => "Nr mieszkania"))
+                ->add('city', null, array('label' => 'City'))
+                ->add('street', null, array('label' => "Street"))
+                ->add('house_number', null, array('label' => "House number"))
+                ->add('apartment_number', null, array('label' => "Apartment number"))
                 ->add('submit', 'submit')
                 ->getForm();
         $form->handleRequest($request);
@@ -258,7 +258,7 @@ class ContactController extends Controller {
 
         $form = $this->createFormBuilder($email)
                 ->add('email', null, array('label' => 'Email'))
-                ->add('type', null, array('label' => "Typ"))
+                ->add('type', null, array('label' => "Type"))
                 ->add('submit', 'submit')
                 ->getForm();
         $form->handleRequest($request);
@@ -282,8 +282,8 @@ class ContactController extends Controller {
         }
 
         $form = $this->createFormBuilder($phone)
-                ->add('number', null, array('label' => 'Numer'))
-                ->add('type', null, array('label' => "Typ"))
+                ->add('number', null, array('label' => 'Number'))
+                ->add('type', null, array('label' => "Type"))
                 ->add('submit', 'submit')
                 ->getForm();
         $form->handleRequest($request);
