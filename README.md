@@ -12,6 +12,7 @@ Website was created using:
 5. Symfony2
 6. Doctrine 2 ORM, DQL
 7. Twig templates
+8. Validation
 
 Features:
 
