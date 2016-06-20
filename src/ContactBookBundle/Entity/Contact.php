@@ -4,6 +4,7 @@ namespace ContactBookBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
@@ -27,6 +28,10 @@ class Contact
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\Regex("/^[A-Z]'?[-a-zA-Z]+$/")
+     * @Assert\Length(min=1,
+     * minMessage="Name should have at least 1 letters")
+     * 
      */
     private $name;
 
@@ -34,6 +39,9 @@ class Contact
      * @var string
      *
      * @ORM\Column(name="surname", type="string", length=255)
+     * 
+     * @Assert\Length(min=1,
+     * minMessage="Surname should have at least 1 letters")
      */
     private $surname;
 
@@ -41,6 +49,8 @@ class Contact
      * @var string
      *
      * @ORM\Column(name="description", type="text")
+     * @Assert\Length(min=1,
+     * minMessage="Description should have at least 1 letters")
      */
     private $description;
 

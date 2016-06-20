@@ -31,6 +31,14 @@ class ContactController extends Controller {
                 ->getForm();
         $form->handleRequest($request);
 
+        $validator = $this->get('validator');
+        $errorsContact = $validator->validate($contact);
+        
+        if(count($errorsContact) > 0){
+            $errorsString = (string)$errorsContact;
+            return new Response($errorsString);
+        }
+        
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($contact);
